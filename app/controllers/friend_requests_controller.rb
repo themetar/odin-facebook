@@ -21,7 +21,7 @@ class FriendRequestsController < ApplicationController
 
   def update
     friend_request = FriendRequest.find params[:id]
-    friend_request.update_attributes(accepted: params[:accepted])
+    friend_request.update(accepted: params[:accepted])
     redirect_back fallback_location: friend_requests_path
   end
 
