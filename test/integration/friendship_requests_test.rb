@@ -141,27 +141,30 @@ class FriendshipRequestsTest < ActionDispatch::IntegrationTest
   end
 
   test "user id redirected to the original page: other user's profile page" do
-    actions = { @eric => {
+    actions = { 
+      @eric => {
                   method: :post,
-                  args: [friend_requests_path, {params: { friend_id: @eric.id }}]
+                  path: friend_requests_path,
+                  kargs: {params: { friend_id: @eric.id }}
                 },
                 @fred => {
                   method: :patch,
-                  args: [friend_request_path(@fred_to_alice), {params: { accepted: true }}]
+                  path: friend_request_path(@fred_to_alice),
+                  kargs: {params: { accepted: true }}
                 },
                 @bob => {
                   method: :delete,
-                  args: [friend_request_path(@alice_to_bob), {}]
+                  path: friend_request_path(@alice_to_bob),
+                  kargs: {}
                 }
               }
     
-    actions.each do |user, action|          
-      method = action[:method]
-      args = action[:args]
-      args[1][:headers] = {referer: user_path(user)}
+    actions.each do |user, action|
+      action => {method:, path:, kargs:}
+      kargs[:headers] = {referer: user_path(user)}
       
       get user_path(user)
-      send(action[:method], *args)
+      send(method, path, **kargs)
       assert_redirected_to user_path(user)
     end
   end
