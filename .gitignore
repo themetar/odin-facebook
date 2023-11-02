@@ -31,3 +31,6 @@
 
 # Ignore environment variables script
 /env-vars.sh
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

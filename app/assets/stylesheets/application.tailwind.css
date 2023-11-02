@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .field {
+    @apply mt-2;
+  }
+
+  .actions {
+    @apply mt-2 mb-2;
+  }
+
+  .text-field {
+    @apply border-2 border-blue-500 rounded px-2 py-1;
+  }
+
+  .text-field:focus {
+    @apply outline-none border-blue-700 bg-blue-100;
+  }
+
+  .form-btn {
+    @apply px-2 py-1 border-2 border-blue-700 rounded-md bg-blue-700 text-white;
+  }
+
+  .form-btn:hover {
+    @apply bg-blue-600;
+  }
+
+  .form-btn:active {
+    @apply bg-blue-800;
+  }
+
+  .form-link {
+    @apply text-blue-700;
+  }
+
+  .form-link:hover {
+    @apply underline;
+  }
+
+  .social-btn {
+    @apply inline-block border-2 border-blue-700 rounded px-2 py-1 text-blue-700;
+  }
+
+  .social-btn:hover {
+    @apply border-blue-800 text-blue-800;
+  }
+
+  .social-neg {
+    @apply border-gray-200 bg-gray-200;
+  }
+
+  .social-neg:hover {
+    @apply border-gray-300 bg-gray-300 text-blue-500;
+  }
+
+  .about-link {
+    @apply text-blue-800;
+    text-underline-position: under;
+  }
+
+  .about-link:hover {
+    @apply text-blue-700 underline;
+  }
+}

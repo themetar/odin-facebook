@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.11'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Tailwind CSS
+gem "tailwindcss-rails", "~> 2.0"
+
 # Devise
 gem 'devise', ">= 4.7.1", git: "https://github.com/heartcombo/devise"
 # OmniAuth
