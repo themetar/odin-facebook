@@ -22,16 +22,16 @@ Then,
 bundle install
 
 # Create the database
-rails db:create
+bin/rails db:create
 
 # Initialize the database
-rails db:schema:load
+bin/rails db:schema:load
 
 # Optionally, seed the database
-rails db:seed
+bin/rails db:seed
 
 # And start the local web server
-rails server
+bin/dev
 ```
 ## Features
 
